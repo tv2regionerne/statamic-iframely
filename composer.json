@@ -1,0 +1,19 @@
+{
+    "name": "tv2regionerne/statamic-iframely",
+    "autoload": {
+        "psr-4": {
+            "Tv2regionerne\\StatamicIframely\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Iframely",
+            "description": "Statamic Iframely addon"
+        },
+        "laravel": {
+            "providers": [
+                "Tv2regionerne\\StatamicIframely\\ServiceProvider"
+            ]
+        }
+    }
+}
