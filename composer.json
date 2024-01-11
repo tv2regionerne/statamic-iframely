@@ -1,5 +1,11 @@
 {
     "name": "tv2regionerne/statamic-iframely",
+    "authors": [
+        {
+            "name": "Sylvester Damgaard",
+            "email": "syda@tv2reg.dk"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Tv2regionerne\\StatamicIframely\\": "src"
