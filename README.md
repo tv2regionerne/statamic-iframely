@@ -27,6 +27,15 @@ IFRAMELY_CACHE_ENABLED=true
 IFRAMELY_CACHE_FOR="1 hour"
 ```
 
+Please follow the documentation on the Iframely website on scripts and styles:
+https://iframely.com/docs/omit-script  
+https://iframely.com/docs/omit-css
+
+The parameters `omit_script` and `omit_css` are enabled by default.
+You may change this through the parameters:
+```
+{{ iframely url="your url here" omit_script="0" omit_css="0" }}
+```
 
 ## How to Use
 
