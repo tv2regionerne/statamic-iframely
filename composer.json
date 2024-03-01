@@ -11,6 +11,9 @@
             "Tv2regionerne\\StatamicIframely\\": "src"
         }
     },
+    "require": {
+        "statamic/cms": "^4.50"
+    },
     "extra": {
         "statamic": {
             "name": "Statamic Iframely",
