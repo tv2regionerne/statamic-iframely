@@ -57,14 +57,21 @@ class Iframely extends Tags
             }
         }
 
-        $response = Http::get($apiUrl)->object();
-        $html = $response->html;
-        if ($cache) {
-            $cacheFor = Carbon::make($this->params->get('cache_for', config('statamic-iframely.cache_for')));
-            Cache::tags(['iframely'])->put($cacheKey, $html, $cacheFor);
+        $response = Http::retry(3)->get($apiUrl);
+
+        if ($response->failed()) {
+            return false;
         }
 
-        return $html;
+        if ($html = $response->object()->html) {
+            if ($cache) {
+                $cacheFor = Carbon::make($this->params->get('cache_for', config('statamic-iframely.cache_for')));
+                Cache::tags(['iframely'])->put($cacheKey, $html, $cacheFor);
+            }
 
+            return $html;
+        }
+
+        return false;
     }
 }
